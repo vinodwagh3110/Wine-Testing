@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import WineForm from "./components/WineForm";
 import ResultCard from "./components/ResultCard";
 import "./App.css";
@@ -147,6 +148,7 @@ export default function App() {
           <a href="#">API Docs</a><a href="#">GitHub</a><a href="#">Privacy</a>
         </div>
       </footer>
+      <SpeedInsights />
     </div>
   );
 }
