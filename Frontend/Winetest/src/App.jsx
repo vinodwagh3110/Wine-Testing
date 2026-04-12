@@ -23,11 +23,13 @@ export default function App() {
   const handlePredict = async (values) => {
     setLoading(true); setError(null); setResult(null);
     try {
-      const res = await fetch("http://localhost:5000/predict", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
+      const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+      // const res = await fetch("http://localhost:5000/predict", {
+        // method: "POST",
+        // headers: { "Content-Type": "application/json" },
+        // body: JSON.stringify(values),
+      // });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Prediction failed");
       setResult(data);
